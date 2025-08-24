@@ -1,31 +1,46 @@
-// Official Eleventy Plugins
-const pluginNavigation = require("@11ty/eleventy-navigation");
-//const pluginRSS = require("@11ty/eleventy-plugin-rss");
-const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+import { HtmlBasePlugin, RenderPlugin } from '@11ty/eleventy';
+import pluginNavigation from '@11ty/eleventy-navigation';
+import pluginRss from '@11ty/eleventy-plugin-rss';
 
-// markdown-it plugins
-const markdownIt = require('markdown-it');
-const markdownItAnchor = require('markdown-it-anchor');
-const markdownItAttrs = require('markdown-it-attrs');
-const markdownItFigures = require('markdown-it-image-figures');
+// import pluginHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
+// import pluginTOC from "eleventy-plugin-toc";
 
-module.exports = function(config) {
-	
-	// Plugins
-	config.addPlugin(EleventyHtmlBasePlugin);
-	config.addPlugin(pluginNavigation);
-	//config.addPlugin(pluginRSS);
+import markdownIt from 'markdown-it';
+import markdownItAttrs from 'markdown-it-attrs';
+import markdownItAnchor from 'markdown-it-anchor';
+import markdownItFigures from 'markdown-it-image-figures';
+import { DateTime } from 'luxon';
 
-	// Passthrough
-	config.addPassthroughCopy({"src/_": "."});
+export default function (config) {
+
+	// Custom Directory Paths
+	config.setInputDirectory('src');
+	config.setDataDirectory('_includes/_data');
+	config.setOutputDirectory('build');
+	config.addPassthroughCopy({'src/_': "."});
 	config.addPassthroughCopy("src/img");
 
-	return {
-		markdownTemplateEngine: 'njk',
-		dir: {
-			input: "src",
-			data: "_includes/_data",
-			output: "build"
-		}
-	}
-}
+	const md = markdownIt();
+
+	// Shortcodes
+	config.addShortcode("markdown", (content) => md.render(content));
+
+	// Libraries
+	config.amendLibrary('md', (md) => {
+		md.use(markdownItAnchor);
+		md.use(markdownItAttrs);
+		md.use(markdownItFigures, {figcaption: 'alt'});
+	});
+
+	// // Plugins
+	config.addPlugin(RenderPlugin);
+	// config.addPlugin(pluginHighlight);
+	config.addPlugin(pluginNavigation);
+	config.addPlugin(pluginRss);
+	// config.addPlugin(pluginTOC);
+	config.addPlugin(HtmlBasePlugin);
+};
+
+export const config = {
+	markdownTemplateEngine: 'njk'
+};
