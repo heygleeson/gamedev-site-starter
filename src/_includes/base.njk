@@ -33,25 +33,21 @@
 	<meta name="twitter:title" content="{{ site.title }} / {{ title }}" />
 
 	<!-- Stylesheets -->
-	<!-- <link rel="stylesheet" type="text/css" href="/css/fonts.css"> -->
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
 	
+	{% if site.services.fontawesome %}
 	<!-- FontAwesome -->
-	<script src="https://kit.fontawesome.com/87224a5bfc.js" crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/{{site.services.fontawesome}}.js" crossorigin="anonymous" defer></script>
+	{% endif %}
 
-	<!-- Twemoji -->
-	{# <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous" defer></script> #}
+	{% if site.services.umami %}
+	<!-- Umami Analytics -->
+	<script defer src="https://cloud.umami.is/script.js" data-website-id="{{ site.services.umami }}"></script>
+	{% endif %}
 
 	<!-- Scripts -->
 	<script src="/js/script.js" defer></script>
-	{% block scripts %}
-
-	{% endblock %}
-	<style>
-	{% block style %}
-
-	{% endblock %}
-	</style>
+	{% block scripts %}{% endblock %}
 </head>
 
 <body>

@@ -1,6 +1,6 @@
 
 
-# Edit stuff here
+## Edit stuff here
 
 title 		= "GHOULISH"
 author 		= "Ghoulish Pty. Ltd."
@@ -11,13 +11,21 @@ url 		= "https://ghoulish.com.au"
 email 		= "mickey@ghoulish.com.au"
 location 	= "Naarm/Melbourne, AUS"
 
-# Analytics Link
-[analytics]
-# umami 		= "8608179f-c3bb-47d6-9eb9-bc3bf95d7150"
-
 [link]
 bluesky 	= "https://bsky.app/profile/ghoulish.com.au"
 steam 		= "https://store.steampowered.com/app/3722090/Parasensor/"
 instagram 	= "https://www.instagram.com/ghoulishstudio/"
 tiktok 		= "https://www.tiktok.com/@ghoulishstudio"
 twitter 	= "https://x.com/GHOULISHstudio"
+
+
+## Third Party Services
+[services]
+
+## Umami Analytics (umami.is)
+## Use your Umami API key (https://cloud.umami.is/api-keys)
+# umami 		= "8608179f-c3bb-47d6-9eb9-bc3bf95d7150"
+
+## FontAwesome (fontawesome.com)
+## Use your kit's custom hash (e.g. 'https://kit.fontawesome.com/{YOUR KIT HASH}.js')
+# fontawesome 	= "87224a5bfc"
