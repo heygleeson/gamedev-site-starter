@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+	<title>{{ title }} / {{ site.title }}</title>
+
+	<!-- Meta -->
+	<meta name="author" content="{{ site.title }}">
+	<meta name="keywords" content="{{ site.keywords }}">
+
+	{% if blurb %}
+	<meta name="description" content="{{blurb}}">
+	<meta property="og:description" content="{{blurb}}" />
+	<meta name="twitter:description" content="{{blurb}}" />
+	{% else %}
+	<meta name="description" content="{{ site.description }}">
+	<meta property="og:description" content="{{ site.description }}" />
+	<meta name="twitter:description" content="{{ site.description }}" />
+	{% endif %}
+
+	<meta property="og:title" content="{{ site.title }} / {{ title }}" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="{{ site.url }} " />
+	<meta property="og:image" content="preview.png" />
+	<meta name="twitter:image" content="preview.png" />
+	
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="{{ site.twitter }}" />
+	<meta name="twitter:title" content="{{ site.title }} / {{ title }}" />
+
+	<!-- Stylesheets -->
+	<!-- <link rel="stylesheet" type="text/css" href="/css/fonts.css"> -->
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	
+	<!-- FontAwesome -->
+	<script src="https://kit.fontawesome.com/87224a5bfc.js" crossorigin="anonymous"></script>
+
+	<!-- Twemoji -->
+	{# <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous" defer></script> #}
+
+	<!-- Scripts -->
+	<script src="/js/script.js" defer></script>
+	{% block scripts %}
+
+	{% endblock %}
+	<style>
+	{% block style %}
+
+	{% endblock %}
+	</style>
+</head>
+
+<body>
+	<script>
+		if (typeof(theme) === 'undefined') { let theme = null; }
+		theme = localStorage.getItem('theme') || 'system';
+		document.documentElement.dataset.theme = theme;
+	</script>
+
+	<header>
+		<a href="/" id="masthead">
+			<img id="logo" src="/img/logo.png" alt="{{ title }}">
+			<!--<div id="subtitle">{{ site.subtitle }}</div>-->
+		</a>
+		<nav>
+			<ul>
+				<li><a href="/about/">About</a></li>
+				<li><a href="/contact/">Contact</a></li>
+				<li><button id="lightToggle"><i id="lighticon" class="fa-solid fa-sun"></i><span role="status" class="visually-hidden">Light mode</span></button></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		{{ content | safe }}
+	</main>
+
+	<footer>
+		<section id="footer-info">
+		</section>
+		<section id="footer-credits">
+			<p>{{ site.title }} &copy; 2025 - <span id="currentYear">2025</span>
+			<script>
+				document.getElementById("currentYear").innerText = new Date().getFullYear();
+			</script> / website by <a href="https://cecilerichard.design/">cecile</a> and <a href="https://gleeson.dev/">andy</a></p>
+			<a href="#masthead"><p id="toTop">Back to Top ↑</p></a>
+		</section>
+	</footer>
+</body>
+</html>
