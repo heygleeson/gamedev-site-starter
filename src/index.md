@@ -4,4 +4,4 @@ layout: base.njk
 permalink: /
 ---
 
-Hello World.
+Hello World. {{ site.title }} {{ site.description }}

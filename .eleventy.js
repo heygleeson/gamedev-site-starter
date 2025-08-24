@@ -11,11 +11,14 @@ import markdownItAnchor from 'markdown-it-anchor';
 import markdownItFigures from 'markdown-it-image-figures';
 import { DateTime } from 'luxon';
 
+import toml from "@iarna/toml";
+
+
 export default function (config) {
 
 	// Custom Directory Paths
 	config.setInputDirectory('src');
-	config.setDataDirectory('_includes/_data');
+	config.setDataDirectory('_includes/data');
 	config.setOutputDirectory('build');
 	config.addPassthroughCopy({'src/_': "."});
 	config.addPassthroughCopy("src/img");
@@ -32,7 +35,10 @@ export default function (config) {
 		md.use(markdownItFigures, {figcaption: 'alt'});
 	});
 
-	// // Plugins
+	// Data Extension
+	config.addDataExtension('toml', (content) => toml.parse(content));
+
+	// Plugins
 	config.addPlugin(RenderPlugin);
 	// config.addPlugin(pluginHighlight);
 	config.addPlugin(pluginNavigation);
