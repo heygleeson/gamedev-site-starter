@@ -23,3 +23,6 @@ permalink: /
 </section>
 
 <!-- ABOUT -->
+
+<!-- PUNK -->
+{% include "partial/wizard.njk" %}

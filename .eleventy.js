@@ -21,7 +21,7 @@ export default function (config) {
 	config.setDataDirectory('_includes/data');
 	config.setOutputDirectory('build');
 	config.addPassthroughCopy({'src/_': "."});
-	config.addPassthroughCopy("src/img");
+	config.addPassthroughCopy("src/images");
 
 	const md = markdownIt();
 
