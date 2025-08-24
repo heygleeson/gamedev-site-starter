@@ -1,0 +1,104 @@
+@font-face {
+    font-family: 'Alagard';
+    src: url('/fonts/Alagard.woff2') format('woff2'),
+        url('/fonts/Alagard.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Atkinson';
+    src: url('../fonts/AtkinsonHyperlegibleNext-Regular.woff2') format('woff2'),
+        url('../fonts/AtkinsonHyperlegibleNext-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+	--color-bg-main: #f9d1d1;
+	--color-bg-secondary: #faa4c9;
+	--color-fg-main: ;
+	--color-text-main: #0b1354;
+	--color-text-secondary: #0b1354;
+
+	--font-heading-main: 'Alagard', serif;
+	--font-body-main: 'Atkinson', sans-serif;
+}
+
+/* CSS reset */
+* { 
+	box-sizing: border-box;
+	margin: 0; padding: 0;
+}
+
+body { 
+	display: flex;
+	flex-flow: column;
+	min-height: 100vh;
+	justify-content: flex-start;
+	align-items: stretch;
+
+	font-family: var(--font-body-main);
+	color: var(--color-text-main);
+}
+
+h1 { font-family: var(--font-heading-main); }
+
+header {
+	display: none;
+	background-color: black;
+}
+
+main {
+	flex: 2;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+
+	background-color: orange;
+
+	> * {
+		width: 100%;
+		padding-block: 3em;
+	}
+	
+	#description {
+		text-align: center;
+
+		background-color: var(--color-bg-secondary);
+
+		background-image: url('/images/background.png');
+		background-size: cover;
+
+		h1, p { margin-inline: auto; max-width: 800px; margin-block: 1em;}
+		h1 { 
+			font-size: 2.5em; 
+			word-break: keep-all; 
+			&:hover { text-shadow: 0.3em -0.3em var(--color-bg-secondary); transition: text-shadow 0.2s ease-in-out }
+		}
+		p { font-size: 1.3em; }
+	}
+
+	#video {
+		background-image: url('/images/key-art.png');
+		background-size: cover;
+	}
+
+	#screenshots { 
+		background: repeating-linear-gradient( -45deg, var(--color-bg-main), var(--color-bg-main) 4em, var(--color-bg-secondary) 4em, var(--color-bg-secondary) 8em );
+	}
+
+
+}
+
+footer { 
+	padding: 0.5em;
+	#credits {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+	}
+}
+
