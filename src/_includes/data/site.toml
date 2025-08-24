@@ -7,17 +7,14 @@ author 		= "StormCat"
 subtitle 	= "A fast-paced, spell-slinging 4-player local party game."
 description = "Create spells by combining the four elements of Air, Earth, Fire and Water, and defeat your fellow wizards with a variety of bombastic magics. "
 keywords 	= "game"
-url 		= "https://ghoulish.com.au"
-email 		= "mickey@ghoulish.com.au"
+url 		= "https://stormcatgames.com/"
+email 		= "stormcatdev@gmail.com"
 location 	= "Naarm/Melbourne, AUS"
 
 [link]
-bluesky 	= "https://bsky.app/profile/ghoulish.com.au"
-steam 		= "https://store.steampowered.com/app/3722090/Parasensor/"
-instagram 	= "https://www.instagram.com/ghoulishstudio/"
-tiktok 		= "https://www.tiktok.com/@ghoulishstudio"
-twitter 	= "https://x.com/GHOULISHstudio"
-
+bluesky 	= "https://bsky.app/profile/eyeofstormcat.bsky.social"
+steam 		= "https://store.steampowered.com/app/3332770/WIZARD_PUNKS/"
+itch 		= "https://eyeofstormcat.itch.io/"
 
 ## Third Party Services
 [services]
