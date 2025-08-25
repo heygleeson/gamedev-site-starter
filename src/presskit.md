@@ -1,35 +1,89 @@
 ---
+title: Presskit
 "layout": "base.njk"
 ---
+<style>
+	header { 
+		display: flex; 
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		padding-inline: 1em;
+		padding-block: 0.2em;
+
+		nav {
+			ul { 
+				display: flex; flex-flow: row nowrap; gap: 0.5em;
+				li { display: block; }
+			}
+
+		}
+	}
+
+	main {
+		display: grid;
+		grid-template-columns: 500px auto;
+		grid-template-rows: auto;
+
+		justify-items: start;
+		align-items: stretch;
+
+		p { font-size: unset; margin: 1em 0;}
+
+		h1 { margin-inline: unset; }
+
+		h2 { margin-block: 1em 0.5em; }
+
+		ul { margin-block: 0.5em; }
+		li { margin-left: 1em; margin-block: 0.5em; }
+
+		> * {  text-align: left; padding-inline: 3em; margin-inline: 0; }
+
+		#factsheet {
+			max-width: 500px;
+			background-color: #f9d1d1;
+		}
+
+		#description {
+			max-width: 100%;
+
+			p { max-width: 70ch; }
+		}
+
+		.gallery { margin: 0; width: 100%; }
+	}
+
+	@media screen and (max-width: 800px) {
+		main { 
+			display: flex;
+
+			div { padding-inline: 1.5em; }
+		}
+	}
+</style>
 
 <div id="factsheet">
 
 # Factsheet
 
-### Developer
+## Developer
 
-{{ site.author }}
-
+{{ site.author }}  
 Based in {{ site.location }}
 
-### Press/Business Contact
+## Press/Business Contact
 
-Hugh Craig, Developer
-
+Hugh Craig, Developer.  
 [{{site.email}}](mailto:{{site.email}})
 
-### Platforms
+## Platforms
 
 - [Steam (PC)]({{ site.link.steam}})
 - [itch.io (PC)]({{ site.link.itch}})
 
-### Key Dates
+## Socials
 
-- **JUL 2023** <br> Prototype began
-- **JUL 2024** <br> Ghoulish founded
-- **OCT 2024** <br> Pre-production began
-- **JUL 2025** <br> Game announced
-- **SEP 29 2025** <br> Release date
+- [Bluesky](https://eyeofstormcat.bsky.social)
+- [X](https://x.com/EyeOfStormCat)
 
 </div>
 <div id="description">
@@ -57,12 +111,25 @@ Each spell you create uses up to three elements. One for the base, and two for t
 - CPU Opponents With 3 Different Difficulties
 - Original Wizarding Soundtrack
 
-## Project History
+# Logo
+<a href="/images/title.png"><img style="width: 100%;" src="/images/title.png" alt="WIZARD PUNKS!!! Logo"></a>
 
-(project history)
+# Key Art
+<div class="gallery">
+	{%- for i in range(1, 3) -%}
+		<a href="/images/key-art-{{i}}.png"><img class="" src="/images/key-art-{{i}}.png" loading="lazy"></a>
+	{%- endfor -%}
+</div>
 
-## About the Developer
 
-(about hugh)
+# Screenshots
+<div class="gallery">
+	{%- for i in range(1, 10) -%}
+		<a href="/images/screenshots/screenshot-{{i}}.png"><img class="screenshot" src="/images/screenshots/screenshot-{{i}}.png" loading="lazy"></a>
+	{%- endfor -%}
+</div>
+
+# Trailer
+<iframe width="560" height="315"  src="https://www.youtube.com/embed/oJ1gdNHIuD0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 </div>
