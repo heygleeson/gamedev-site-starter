@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-	<title> / WIZARD PUNKS!!!</title>
+	<title>Presskit / WIZARD PUNKS!!!</title>
 
 	<!-- Meta -->
 	<meta name="author" content="WIZARD PUNKS!!!">
@@ -17,7 +17,7 @@
 	<meta name="twitter:description" content="Create spells by combining the four elements of Air, Earth, Fire and Water, and defeat your fellow wizards with a variety of bombastic magics. " />
 	
 
-	<meta property="og:title" content="WIZARD PUNKS!!! / " />
+	<meta property="og:title" content="WIZARD PUNKS!!! / Presskit" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://stormcatgames.com/ " />
 	<meta property="og:image" content="preview.png" />
@@ -26,7 +26,7 @@
 
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="" />
-	<meta name="twitter:title" content="WIZARD PUNKS!!! / " />
+	<meta name="twitter:title" content="WIZARD PUNKS!!! / Presskit" />
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
@@ -48,40 +48,91 @@
 	</script>
 
 	<header>
-		<a href="/" id="masthead">
-			<img id="logo" src="/img/logo.png" alt="">
-			<!--<div id="subtitle">A fast-paced, spell-slinging 4-player local party game.</div>-->
-		</a>
+		<a href="/" id="masthead">WIZARD PUNKS!!!</a>
 		<nav>
 			<ul>
-				<li><a href="/about/">About</a></li>
+				<li><a href="/presskit/">Presskit</a></li>
 				<li><a href="/contact/">Contact</a></li>
-				<li><button id="lightToggle"><i id="lighticon" class="fa-solid fa-sun"></i><span role="status" class="visually-hidden">Light mode</span></button></li>
 			</ul>
 		</nav>
 	</header>
 
 	<main>
-		<div id="factsheet">
+		<style>
+	header { 
+		display: flex; 
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		padding-inline: 1em;
+		padding-block: 0.2em;
+
+		nav {
+			ul { 
+				display: flex; flex-flow: row nowrap; gap: 0.5em;
+				li { display: block; }
+			}
+
+		}
+	}
+
+	main {
+		display: grid;
+		grid-template-columns: 500px auto;
+		grid-template-rows: auto;
+
+		justify-items: start;
+		align-items: stretch;
+
+		p { font-size: unset; margin: 1em 0;}
+
+		h1 { margin-inline: unset; }
+
+		h2 { margin-block: 1em 0.5em; }
+
+		ul { margin-block: 0.5em; }
+		li { margin-left: 1em; margin-block: 0.5em; }
+
+		> * {  text-align: left; padding-inline: 3em; margin-inline: 0; }
+
+		#factsheet {
+			max-width: 500px;
+			background-color: #f9d1d1;
+		}
+
+		#description {
+			max-width: 100%;
+
+			p { max-width: 70ch; }
+		}
+
+		.gallery { margin: 0; width: 100%; }
+	}
+
+	@media screen and (max-width: 800px) {
+		main { 
+			display: flex;
+
+			div { padding-inline: 1.5em; }
+		}
+	}
+</style>
+<div id="factsheet">
 <h1 id="factsheet" tabindex="-1">Factsheet</h1>
-<h3 id="developer" tabindex="-1">Developer</h3>
-<p>StormCat</p>
-<p>Based in Naarm/Melbourne, AUS</p>
-<h3 id="press%2Fbusiness-contact" tabindex="-1">Press/Business Contact</h3>
-<p>Hugh Craig, Developer</p>
-<p><a href="mailto:stormcatdev@gmail.com">stormcatdev@gmail.com</a></p>
-<h3 id="platforms" tabindex="-1">Platforms</h3>
+<h2 id="developer" tabindex="-1">Developer</h2>
+<p>StormCat<br>
+Based in Naarm/Melbourne, AUS</p>
+<h2 id="press%2Fbusiness-contact" tabindex="-1">Press/Business Contact</h2>
+<p>Hugh Craig, Developer.<br>
+<a href="mailto:stormcatdev@gmail.com">stormcatdev@gmail.com</a></p>
+<h2 id="platforms" tabindex="-1">Platforms</h2>
 <ul>
 <li><a href="https://store.steampowered.com/app/3332770/WIZARD_PUNKS/">Steam (PC)</a></li>
 <li><a href="https://eyeofstormcat.itch.io/">itch.io (PC)</a></li>
 </ul>
-<h3 id="key-dates" tabindex="-1">Key Dates</h3>
+<h2 id="socials" tabindex="-1">Socials</h2>
 <ul>
-<li><strong>JUL 2023</strong> <br> Prototype began</li>
-<li><strong>JUL 2024</strong> <br> Ghoulish founded</li>
-<li><strong>OCT 2024</strong> <br> Pre-production began</li>
-<li><strong>JUL 2025</strong> <br> Game announced</li>
-<li><strong>SEP 29 2025</strong> <br> Release date</li>
+<li><a href="https://eyeofstormcat.bsky.social">Bluesky</a></li>
+<li><a href="https://x.com/EyeOfStormCat">X</a></li>
 </ul>
 </div>
 <div id="description">
@@ -105,18 +156,20 @@
 <li>CPU Opponents With 3 Different Difficulties</li>
 <li>Original Wizarding Soundtrack</li>
 </ul>
-<h2 id="project-history" tabindex="-1">Project History</h2>
-<p>(project history)</p>
-<h2 id="about-the-developer" tabindex="-1">About the Developer</h2>
-<p>(about hugh)</p>
+<h1 id="logo" tabindex="-1">Logo</h1>
+<p><a href="/images/title.png"><img style="width: 100%;" src="/images/title.png" alt="WIZARD PUNKS!!! Logo"></a></p>
+<h1 id="key-art" tabindex="-1">Key Art</h1>
+<div class="gallery"><a href="/images/key-art-1.png"><img class="" src="/images/key-art-1.png" loading="lazy"></a><a href="/images/key-art-2.png"><img class="" src="/images/key-art-2.png" loading="lazy"></a></div>
+<h1 id="screenshots" tabindex="-1">Screenshots</h1>
+<div class="gallery"><a href="/images/screenshots/screenshot-1.png"><img class="screenshot" src="/images/screenshots/screenshot-1.png" loading="lazy"></a><a href="/images/screenshots/screenshot-2.png"><img class="screenshot" src="/images/screenshots/screenshot-2.png" loading="lazy"></a><a href="/images/screenshots/screenshot-3.png"><img class="screenshot" src="/images/screenshots/screenshot-3.png" loading="lazy"></a><a href="/images/screenshots/screenshot-4.png"><img class="screenshot" src="/images/screenshots/screenshot-4.png" loading="lazy"></a><a href="/images/screenshots/screenshot-5.png"><img class="screenshot" src="/images/screenshots/screenshot-5.png" loading="lazy"></a><a href="/images/screenshots/screenshot-6.png"><img class="screenshot" src="/images/screenshots/screenshot-6.png" loading="lazy"></a><a href="/images/screenshots/screenshot-7.png"><img class="screenshot" src="/images/screenshots/screenshot-7.png" loading="lazy"></a><a href="/images/screenshots/screenshot-8.png"><img class="screenshot" src="/images/screenshots/screenshot-8.png" loading="lazy"></a><a href="/images/screenshots/screenshot-9.png"><img class="screenshot" src="/images/screenshots/screenshot-9.png" loading="lazy"></a></div>
+<h1 id="trailer" tabindex="-1">Trailer</h1>
+<iframe width="560" height="315"  src="https://www.youtube.com/embed/oJ1gdNHIuD0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 	</main>
 
 	<footer>
 		<section id="credits">
-			<p>WIZARD PUNKS!!! &copy; <span id="currentYear">2025</span><script>document.getElementById("currentYear").innerText = new Date().getFullYear();</script></p>
-			<p>(website by <a href="https://cecilerichard.design/">cecile</a> and <a href="https://gleeson.dev/">andy</a>)</p>
-			<p id="toTop"><a href="#masthead">Back to Top ↑</a></p>
+			<p>WIZARD PUNKS!!! by StormCat / website by <a href="https://cecilerichard.design/">cecile</a> and <a href="https://gleeson.dev/">andy</a> &copy; <span id="currentYear">2025</span><script>document.getElementById("currentYear").innerText = new Date().getFullYear();</script></p>
 		</section>
 	</footer>
 </body>
